@@ -77,7 +77,7 @@ public class BaseClass extends AbstractTestNGCucumberTests{
 		 
         ChromeOptions browserOptions = new ChromeOptions();
         browserOptions.setPlatformName("Windows 11");
-        browserOptions.setBrowserVersion("latest");
+        browserOptions.setBrowserVersion("118");
         Map<String, Object> sauceOptions = new HashMap<>();
         sauceOptions.put("username", "oauth-mohanapriya1811-e195b");
         sauceOptions.put("accessKey", "cb80d952-7294-4ede-bd6d-9ea516ed43fd");
