@@ -42,7 +42,7 @@ import java.sql.SQLException;
 
 public class BaseClass extends AbstractTestNGCucumberTests{
 
-	public static ChromeDriver driver;
+	public static RemoteWebDriver driver;
 	public static Properties prop; 
 	public String excelFileName, sheetName;
     public static ChromeOptions options;
@@ -86,10 +86,10 @@ public class BaseClass extends AbstractTestNGCucumberTests{
         browserOptions.setCapability("sauce:options", sauceOptions);
 
         URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
-        RemoteWebDriver driver = new RemoteWebDriver(url, browserOptions);
+         driver = new RemoteWebDriver(url, browserOptions);
 		
-		driver = new ChromeDriver(browserOptions);
-		/*
+		
+		/*driver = new ChromeDriver(browserOptions);
 		 * Options opt = driver.manage(); Window win = opt.window(); win.maximize();
 		 * Timeouts timeouts = opt.timeouts(); Timeouts tm =
 		 * timeouts.implicitlyWait(Duration.ofSeconds(30));
