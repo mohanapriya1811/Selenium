@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.net.URL;
 
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.Webdriver;
 import java.util.Map;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.apache.commons.io.FileUtils;
@@ -42,10 +42,10 @@ import java.sql.SQLException;
 
 public class BaseClass extends AbstractTestNGCucumberTests{
 
-	public static RemoteWebDriver driver;
+	
 	public static Properties prop; 
 	public String excelFileName, sheetName;
-    public static ChromeOptions options;
+   	public static WebDriver driver;
 	
 	public static ExtentReports extent;
 	public static ExtentTest test;
@@ -75,7 +75,7 @@ public class BaseClass extends AbstractTestNGCucumberTests{
 
 		}
 		 
-        ChromeOptions browserOptions = new ChromeOptions();
+      /*  ChromeOptions browserOptions = new ChromeOptions();
         browserOptions.setPlatformName("Linux");
         browserOptions.setBrowserVersion("117");
         Map<String, Object> sauceOptions = new HashMap<>();
@@ -87,14 +87,14 @@ public class BaseClass extends AbstractTestNGCucumberTests{
 
         URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
          driver = new RemoteWebDriver(url, browserOptions);
-		
+	*/	
 		
 		/*driver = new ChromeDriver(browserOptions);
 		 * Options opt = driver.manage(); Window win = opt.window(); win.maximize();
 		 * Timeouts timeouts = opt.timeouts(); Timeouts tm =
 		 * timeouts.implicitlyWait(Duration.ofSeconds(30));
 		 */
-
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.get("http://leaftaps.com/opentaps/control/main");
